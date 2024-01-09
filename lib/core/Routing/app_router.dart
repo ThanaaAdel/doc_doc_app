@@ -2,7 +2,7 @@ import 'package:doc_doc_app/core/Routing/routers.dart';
 import 'package:doc_doc_app/features/on_boarding_screen/presentation/screens/on_boarding_screen.dart';
 import 'package:flutter/material.dart';
 
-import '../../features/login_screen/presentaion/login_screen.dart';
+import '../../features/login_screen/presentaion/screens/login_screen.dart';
 class AppRouter {
 Route generateRoute(RouteSettings settings){
   switch(settings.name){
