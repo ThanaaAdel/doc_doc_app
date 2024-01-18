@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/theming/styles.dart';
 
 class TermAndConditionText extends StatelessWidget {
   const TermAndConditionText({super.key});

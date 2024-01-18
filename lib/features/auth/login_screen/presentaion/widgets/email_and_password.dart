@@ -1,11 +1,11 @@
-import 'package:doc_doc_app/core/helper/app_regex.dart';
-import 'package:doc_doc_app/features/login_screen/logic/login_cubit.dart';
-import 'package:doc_doc_app/features/login_screen/presentaion/widgets/password_validations.dart';
+import 'password_validations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/shared_widgets/app_text_feild.dart';
-import '../../../../core/theming/spacing.dart';
+import '../../../../../core/helper/app_regex.dart';
+import '../../../../../core/shared_widgets/app_text_feild.dart';
+import '../../../../../core/theming/spacing.dart';
+import '../../logic/login_cubit.dart';
 
 class EmailAndPassword extends StatefulWidget {
   const EmailAndPassword({super.key});

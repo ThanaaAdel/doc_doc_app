@@ -1,7 +1,8 @@
-import 'package:doc_doc_app/core/theming/colors.dart';
-import 'package:doc_doc_app/core/theming/spacing.dart';
-import 'package:doc_doc_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/spacing.dart';
+import '../../../../../core/theming/styles.dart';
 class PasswordValidations extends StatelessWidget {
   const PasswordValidations({super.key, required this.hasLowerCase, required this.hasUpperCase, required this.hasNumber, required this.hasMinLength, required this.hasSpecialCharacters});
 final bool hasLowerCase;

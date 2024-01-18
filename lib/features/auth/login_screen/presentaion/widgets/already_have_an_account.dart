@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../core/theming/styles.dart';
+import '../../../../../core/theming/styles.dart';
+
 
 class AlreadyHaveAccountText extends StatelessWidget {
   const AlreadyHaveAccountText({super.key});

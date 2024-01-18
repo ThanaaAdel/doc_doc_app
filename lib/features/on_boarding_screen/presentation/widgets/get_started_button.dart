@@ -1,5 +1,5 @@
-import 'package:doc_doc_app/core/helper/extentions.dart';
-import 'package:doc_doc_app/core/theming/colors.dart';
+import '../../../../core/helper/extentions.dart';
+import '../../../../core/theming/colors.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/Routing/routers.dart';

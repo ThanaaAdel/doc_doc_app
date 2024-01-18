@@ -1,14 +1,15 @@
-import 'package:doc_doc_app/core/shared_widgets/app_elevated_button.dart';
-import 'package:doc_doc_app/core/theming/styles.dart';
-import 'package:doc_doc_app/features/login_screen/data/models/login_request_body.dart';
-import 'package:doc_doc_app/features/login_screen/logic/login_cubit.dart';
-import 'package:doc_doc_app/features/login_screen/presentaion/widgets/login_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/theming/spacing.dart';
+
+import '../../../../../core/shared_widgets/app_elevated_button.dart';
+import '../../../../../core/theming/spacing.dart';
+import '../../../../../core/theming/styles.dart';
+import '../../data/models/login_request_body.dart';
+import '../../logic/login_cubit.dart';
 import '../widgets/already_have_an_account.dart';
 import '../widgets/email_and_password.dart';
+import '../widgets/login_bloc_listener.dart';
 import '../widgets/term_and_condition_text.dart';
 
 class LoginScreen extends StatelessWidget {
