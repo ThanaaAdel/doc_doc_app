@@ -5,6 +5,7 @@ class RegisterRequestBody {
   final String name;
   final String email;
   final String phone;
+  final String gender;
   final String password;
   @JsonKey(name: 'password_confirmation')
   final String passwordConfirmation;
@@ -14,7 +15,8 @@ class RegisterRequestBody {
       required this.email,
       required this.phone,
       required this.password,
-      required this.passwordConfirmation});
+      required this.passwordConfirmation,
+      required this.gender});
   Map<String , dynamic> toJson() => _$RegisterRequestBodyToJson(this);
 
 }

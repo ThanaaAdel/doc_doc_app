@@ -13,6 +13,7 @@ class AppTextFormField extends StatelessWidget {
   final EdgeInsetsGeometry? contentPadding;
   final Function(String?) validator;
   final TextEditingController? controller;
+  final TextInputType? textInputType;
   const AppTextFormField(
       {super.key,
       required this.hintText,
@@ -22,13 +23,15 @@ class AppTextFormField extends StatelessWidget {
       this.enabledBorder,
       this.contentPadding,
       required this.validator,
-      this.controller});
+      this.controller, this.textInputType});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+keyboardType: textInputType,
       controller: controller,
       decoration: InputDecoration(
+
           isDense: true,
           contentPadding: contentPadding ??
               EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),

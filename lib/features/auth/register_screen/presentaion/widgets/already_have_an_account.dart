@@ -1,3 +1,4 @@
+import 'package:doc_doc_app/core/helper/extentions.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/theming/styles.dart';
@@ -8,22 +9,27 @@ class AlreadyHaveAccountText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  RichText(
-      textAlign: TextAlign.center,
-      text:
-      TextSpan(children:
-      [
-        TextSpan(
-          text: "Already Have an Account ? ",
-          style: TextStyles.font13DarkBlueRegular,
+    return  GestureDetector(
+      onTap: () {
+        context.pop();
+      },
+      child: RichText(
+        textAlign: TextAlign.center,
+        text:
+        TextSpan(children:
+        [
+          TextSpan(
+            text: "Already Have an Account ? ",
+            style: TextStyles.font13DarkBlueRegular,
+          ),
+          TextSpan(
+            text: " Login In",
+            style: TextStyles.font13BlueSemiBold,
+          ),
+        ]
         ),
-        TextSpan(
-          text: "Sign Up ",
-          style: TextStyles.font13BlueSemiBold,
-        ),
-      ]
-      ),
 
+      ),
     );
   }
 }
