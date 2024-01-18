@@ -11,9 +11,14 @@ import '../../../login_screen/presentaion/widgets/term_and_condition_text.dart';
 import '../widgets/already_have_an_account.dart';
 import '../widgets/register_bloc_listener.dart';
 
-class RegisterScreen extends StatelessWidget {
+class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
 
+  @override
+  State<RegisterScreen> createState() => _RegisterScreenState();
+}
+
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +73,14 @@ class RegisterScreen extends StatelessWidget {
           phone: context.read<RegisterCubit>().phoneController.text,
           password: context.read<RegisterCubit>().passwordController.text,
           passwordConfirmation: context.read<RegisterCubit>().confirmPasswordController.text));
+      setState(() {
+        context.read<RegisterCubit>().emailController.clear();
+        context.read<RegisterCubit>().passwordController.clear();
+        context.read<RegisterCubit>().phoneController.clear();
+        context.read<RegisterCubit>().genderController.clear();
+        context.read<RegisterCubit>().confirmPasswordController.clear();
+        context.read<RegisterCubit>().nameController.clear();
+      });
     }
   }
 }

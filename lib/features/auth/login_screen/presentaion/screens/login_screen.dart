@@ -12,9 +12,14 @@ import '../widgets/email_and_password.dart';
 import '../widgets/login_bloc_listener.dart';
 import '../widgets/term_and_condition_text.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
 
@@ -52,6 +57,7 @@ class LoginScreen extends StatelessWidget {
                       textStyle: TextStyles.font16WithSemiBold,
                       onPressed: () {
                         validateThenDoLogin(context);
+
                       },
                       textButton: 'Login'),
                   verticalSpacing(20),
@@ -73,6 +79,10 @@ class LoginScreen extends StatelessWidget {
       context.read<LoginCubit>().emitLoginStates(LoginRequestBody(
           email: context.read<LoginCubit>().emailController.text,
           password: context.read<LoginCubit>().passwordController.text));
+      setState(() {
+        context.read<LoginCubit>().emailController.clear();
+        context.read<LoginCubit>().passwordController.clear();
+      });
     }
   }
 }
