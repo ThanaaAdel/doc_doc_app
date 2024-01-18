@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response.dart';
+part of 'api_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
-    LoginResponse(
+ApiResponse _$ApiResponseFromJson(Map<String, dynamic> json) => ApiResponse(
       message: json['message'] as String?,
       userData: json['data'] == null
           ? null
@@ -16,7 +15,7 @@ LoginResponse _$LoginResponseFromJson(Map<String, dynamic> json) =>
       code: json['code'] as int?,
     );
 
-Map<String, dynamic> _$LoginResponseToJson(LoginResponse instance) =>
+Map<String, dynamic> _$ApiResponseToJson(ApiResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'data': instance.userData,

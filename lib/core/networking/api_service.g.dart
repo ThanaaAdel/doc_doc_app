@@ -21,14 +21,14 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<LoginResponse> login(LoginRequestBody loginRequestBody) async {
+  Future<ApiResponse> login(LoginRequestBody loginRequestBody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(loginRequestBody.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -45,20 +45,19 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResponse.fromJson(_result.data!);
+    final value = ApiResponse.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<LoginResponse> register(
-      RegisterRequestBody registerRequestBody) async {
+  Future<ApiResponse> register(RegisterRequestBody registerRequestBody) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(registerRequestBody.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<LoginResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -75,7 +74,34 @@ class _ApiService implements ApiService {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = LoginResponse.fromJson(_result.data!);
+    final value = ApiResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<ApiResponse> logout() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<ApiResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'auth/logout',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ApiResponse.fromJson(_result.data!);
     return value;
   }
 

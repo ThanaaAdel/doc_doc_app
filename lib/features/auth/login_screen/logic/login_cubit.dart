@@ -24,4 +24,8 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginState.error(error: error.apiErrorModel.message ?? ''));
     });
   }
+  void emitLogoutStates()async{
+      emit(const LoginState.logout());
+
+  }
 }

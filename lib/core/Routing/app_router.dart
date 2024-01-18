@@ -15,7 +15,9 @@ Route generateRoute(RouteSettings settings){
     case Routes.onBoardingScreen:
     return MaterialPageRoute(builder: (context) => const OnBoardingScreen(),);
     case Routes.homeScreen:
-      return MaterialPageRoute(builder: (context) => const HomeScreen(),);
+      return MaterialPageRoute(builder: (context) => BlocProvider(
+          create: (context) => getIt<LoginCubit>(),
+          child: const HomeScreen()),);
     case Routes.registerScreen:
       return MaterialPageRoute(builder: (context) => BlocProvider(
           create: (context) => getIt<RegisterCubit>(),
